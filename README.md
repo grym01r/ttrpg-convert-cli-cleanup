@@ -23,9 +23,9 @@ Type: Beast
 
 After:
 
-\>[!infobox|left clean wmed]
-\>Name: Creature
-\>Type: Beast
+\>[!infobox|left clean wmed] <br>
+\>Name: Creature <br>
+\>Type: Beast <br>
 ...
 ^statblock
 
