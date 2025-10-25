@@ -61,7 +61,7 @@ Place the script in the root directory containing your .md files.
 
 Make executable:
 
-chmod +x fix-markdown-formatting.sh
+`chmod +x cleanup.sh`
 
 
 Run:
@@ -91,20 +91,21 @@ Files are updated in-place, but temporary .tmp files are used safely.
 Before
 
 statblock:
-`[!infobox|left clean wmed]
-Name: Skeleton
-HP: 13`
+>[!infobox|left clean wmed]
+>Name: Skeleton
+>HP: 13`
+
 YAML frontmatter:
-`image: ![](2.%20Mechanics/Skeleton.webp#right)`
+>image: ![](2.%20Mechanics/Skeleton.webp#right)
 
 
 
 After
 statblock:
-`\>[!infobox|left clean wmed]
-\>Name: Skeleton
-\>HP: 13`
+>\>[!infobox|left clean wmed]
+>\>Name: Skeleton
+>\>HP: 13
 
 YAML frontmatter:
-`image: 2. Mechanics/Skeleton.webp`
+>image: 2. Mechanics/Skeleton.webp
 
