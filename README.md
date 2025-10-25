@@ -35,12 +35,12 @@ Only in front-matter (image: lines):
 
 Converts:
 
-`image: ![](2.%20Mechanics/SomeImage.webp#right)`
+>image: ![](2.%20Mechanics/SomeImage.webp#right)
 
 
 to
 
-`image: 2. Mechanics/SomeImage.webp`
+>image: 2. Mechanics/SomeImage.webp
 
 
 This does not change any other image references in the Markdown body.
