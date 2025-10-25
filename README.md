@@ -66,9 +66,9 @@ chmod +x fix-markdown-formatting.sh
 
 Run:
 
-./fix-markdown-formatting.sh
+`./cleanup.sh`
 
-#Recommended Workflow
+# Recommended Workflow
 
 Commit or back up your markdown files before running the script.
 
