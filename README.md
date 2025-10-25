@@ -14,10 +14,10 @@ Everything between the infobox line and the next ^statblock line is automaticall
 
 Before:
 
-[!infobox|left clean wmed]
-Name: Creature
-Type: Beast
-...
+[!infobox|left clean wmed] <br>
+Name: Creature <br>
+Type: Beast <br>
+... <br>
 ^statblock
 
 
