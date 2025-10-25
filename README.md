@@ -47,7 +47,7 @@ This does not change any other image references in the Markdown body.
 
 4. Shows a Progress Bar
 
-Displays percentage and file count while processing. Handy for very large files, such as the items, to make sure you're not opening up the markdown files to verify changes have been made too soon.
+Displays percentage and file count while processing. Handy for very large folders, such as the items, to make sure you're not opening up the markdown files to verify changes have been made too soon.
 
 # Requirements
 
