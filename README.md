@@ -26,7 +26,7 @@ After:
 \>[!infobox|left clean wmed] <br>
 \>Name: Creature <br>
 \>Type: Beast <br>
-...
+\>... <br>
 ^statblock
 
 3. Fixes Front-Matter Image Paths
@@ -35,12 +35,12 @@ Only in front-matter (image: lines):
 
 Converts:
 
-image: ![](2.%20Mechanics/SomeImage.webp#right)
+`image: ![](2.%20Mechanics/SomeImage.webp#right)`
 
 
 to
 
-image: 2. Mechanics/SomeImage.webp
+`image: 2. Mechanics/SomeImage.webp`
 
 
 This does not change any other image references in the Markdown body.
@@ -90,21 +90,21 @@ Files are updated in-place, but temporary .tmp files are used safely.
 
 Before
 
-[!infobox|left clean wmed]
+statblock:
+`[!infobox|left clean wmed]
 Name: Skeleton
-HP: 13
+HP: 13`
+YAML frontmatter:
+`image: ![](2.%20Mechanics/Skeleton.webp#right)`
 
-image: ![](2.%20Mechanics/Skeleton.webp#right)
-
-^statblock
 
 
 After
+statblock:
+`\>[!infobox|left clean wmed]
+\>Name: Skeleton
+\>HP: 13`
 
->[!infobox|left clean wmed]
->Name: Skeleton
->HP: 13
+YAML frontmatter:
+`image: 2. Mechanics/Skeleton.webp`
 
-image: 2. Mechanics/Skeleton.webp
-
-^statblock
