@@ -35,7 +35,7 @@ Only in front-matter (image: lines):
 
 Converts:
 
->image: ![](2.%20Mechanics/SomeImage.webp#right)
+>image: \![]\(2.%20Mechanics/SomeImage.webp#right)
 
 
 to
