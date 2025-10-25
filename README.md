@@ -1,4 +1,4 @@
-✅ What This Script Does
+#What This Script Does
 
 For every .md file in the directory (including subfolders):
 
@@ -49,13 +49,13 @@ This does not change any other image references in the Markdown body.
 
 Displays percentage and file count while processing.
 
-🧩 Requirements
+#Requirements
 
 Bash shell (Linux / macOS / WSL / Git Bash)
 
 GNU sed and awk (default on Linux/macOS)
 
-▶️ Usage
+#Usage
 
 Place the script in the root directory containing your .md files.
 
@@ -68,7 +68,7 @@ Run:
 
 ./fix-markdown-formatting.sh
 
-♻️ Recommended Workflow
+#Recommended Workflow
 
 Commit or back up your markdown files before running the script.
 
@@ -78,7 +78,7 @@ Verify formatting on a few example files.
 
 Commit the results once you approve.
 
-⚠️ Notes & Limitations
+#Notes & Limitations
 
 The script assumes infobox sections end at the first line beginning with ^statblock.
 
@@ -86,7 +86,7 @@ Only front-matter image lines beginning with image: are modified.
 
 Files are updated in-place, but temporary .tmp files are used safely.
 
-📝 Example File Before & After
+#Example File Before & After
 
 Before
 
