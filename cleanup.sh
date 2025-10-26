@@ -22,17 +22,23 @@ progress_bar() {
 for file in "${files[@]}"; do
   ((count++))
 
+  ########################################
   # --- Step 1: SED FIXES ---
+  ########################################
+
   # Add > before infobox line (only if not already there)
   sed -i 's/^\[!infobox|left clean wmed\]/>[!infobox|left clean wmed]/' "$file"
 
-  # Only modify image line in front-matter
-  sed -i -E 's/^image:\s*!\[\]\(2\.%20Mechanics\//image: 2. Mechanics\//g' "$file"
+  # Change ONLY front-matter image: ![](2.%20Lexicon/... → image: 2. Lexicon/...
+  sed -i -E 's|^image:\s*!\[\]\(2\.%20Lexicon/|image: 2. Lexicon/|' "$file"
 
-  # Remove trailing .webp#right) → .webp)
-  sed -i -E 's/\.webp#right\)/.webp)/g' "$file"
+  # Correct `.webp#right)` → `.webp` ONLY in front-matter image lines
+  sed -i -E 's|^image:(.*)\.webp#right\)|image:\1.webp|' "$file"
 
-  # --- Step 2: Blockquote between infobox and ^statblock ---
+
+  ########################################
+  # --- Step 2: Blockquote Infobox Block ---
+  ########################################
   awk '
     BEGIN {in_block=0}
     /^>?\[!infobox\|left clean wmed\]/ { print; in_block=1; next }
@@ -47,10 +53,13 @@ for file in "${files[@]}"; do
     }
   ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
 
-  # --- Step 3: Update Progress Bar ---
+
+  ########################################
+  # --- Step 3: Progress Bar ---
+  ########################################
   progress_bar "$count" "$total"
+
 done
 
-# Done
 echo
 echo "✅ All $total Markdown files processed successfully!"
