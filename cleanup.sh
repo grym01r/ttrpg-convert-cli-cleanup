@@ -29,8 +29,8 @@ for file in "${files[@]}"; do
   # Add > before infobox line (only if not already there)
   sed -i 's/^\[!infobox|left clean wmed\]/>[!infobox|left clean wmed]/' "$file"
 
-  # Change ONLY front-matter image: ![](2.%20Lexicon/... → image: 2. Lexicon/...
-  sed -i -E 's|^image:\s*!\[\]\(2\.%20Lexicon/|image: 2. Lexicon/|' "$file"
+  # Change ONLY front-matter image: ![](2.%20Mechanics/... → image: 2. Mechanics/...
+  sed -i -E 's|^image:\s*!\[\]\(2\.%20Mechanics/|image: 2. Mechanics/|' "$file"
 
   # Correct `.webp#right)` → `.webp` ONLY in front-matter image lines
   sed -i -E 's|^image:(.*)\.webp#right\)|image:\1.webp|' "$file"
@@ -53,9 +53,14 @@ for file in "${files[@]}"; do
     }
   ' "$file" > "$file.tmp" && mv "$file.tmp" "$file"
 
+  ########################################
+  # --- Step 4: Replace front-matter block ---
+  ########################################
+  find . -type f -name "*.md" -exec sed -i '/^obsidianUIMode: preview/,/^aliases:/ {/^[aA]liases:/!s/.*/type: /}' {} +
+  find . -type f -name "*.md" -exec sh -c 'uniq "$1" > "$1.tmp" && mv "$1.tmp" "$1"' _ {} \;
 
   ########################################
-  # --- Step 3: Progress Bar ---
+  # --- Step 5: Progress Bar ---
   ########################################
   progress_bar "$count" "$total"
 
